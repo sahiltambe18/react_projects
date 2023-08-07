@@ -1,3 +1,3 @@
-# react_projects
+# react Practice demo sites
 
 ** my Reactjs practice websites 
