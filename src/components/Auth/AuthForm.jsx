@@ -16,7 +16,6 @@ const AuthForm = () => {
 
   const onSubmit = (values, actions) => {
     setSub(true)
-    console.log(actions)
     let url;
     if (isLogin) {
       url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAlQ0NuH41NbVAe86XopUWAvoL_zwLmpWg"
