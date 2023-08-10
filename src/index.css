@@ -34,3 +34,16 @@ a.active{
   text-decoration: none;
   color: red;
 }
+input.input-error ,
+select.input-error{
+  border: 5px solid red;
+}
+
+.error{
+  color: red;
+  font-size: small;
+}
+
+button:disabled{
+  opacity: 0.5;
+}

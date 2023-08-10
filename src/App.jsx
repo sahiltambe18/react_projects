@@ -1,25 +1,31 @@
-import {Routes , BrowserRouter as Router, Route  } from 'react-router-dom';
-import Home from './Home';
-import Navbar from './Navbar';
-import About from './About';
-import Contact from './Contact';
-import Products from './Products';
-import ProductItem from './ProductItem';
+import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux'
 
-function App() {  
-  
+import store from './store/index'
+
+import Layout from './components/Layout/Layout';
+import UserProfile from './components/Profile/UserProfile';
+import AuthPage from './pages/AuthPage';
+import HomePage from './pages/HomePage';
+
+function App() {
+
   return (
-    <Router>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>}/> 
-        <Route path='/about' element={<About/>}/> 
-        <Route path='/contact' element={<Contact/>}/> 
-        <Route path='/product' element={<Products/>}/> 
-        <Route path='/products/:prid' element={<ProductItem/>}/> 
-      </Routes>
-    </Router>
+    <Provider store={store} >
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path='/' exact element={<HomePage />} />
+            <Route path='/auth' element={<UserProfile />} />
+            <Route path='/profile' element={<AuthPage />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </Provider>
   );
 }
 
 export default App;
+
+
+// https://console.firebase.google.com/project/auth-demo-66854/database/auth-demo-66854-default-rtdb/data/~2F
