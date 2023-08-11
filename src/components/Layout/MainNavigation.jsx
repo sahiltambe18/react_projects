@@ -13,7 +13,7 @@ const MainNavigation = () => {
   console.log(state)
 
   const logOutHandler = ()=>{
-    dispatch(logout)
+    dispatch(logout())
   }
 
   return (
